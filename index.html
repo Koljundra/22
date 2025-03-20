@@ -1,15 +1,90 @@
-<canvas id="canv" width="300" height="300"></canvas>
-<script>
-    const canv = document.getElementById('canv');
-    const ctx = canv.getContext('2d');
-
-    function draw(w, h) {
-        for (let i = 0; i < w; i++) {
-            for (let j = 0; j < h; j++) {
-                ctx.fillRect(20*i, 20*j, 10, 10);
-            }
-        }
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS Art - Simple House (Fixed Roof)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Центрирование содержимого на странице */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #b2eced;
     }
-    draw(10, 4);
+
     
-</script>
+    
+
+    /* Крыша – треугольник, создаваемый с помощью CSS‑границ */
+    .roof {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 250px solid transparent;
+      border-right: 250px solid transparent;
+    
+      border-bottom: 193px solid #dcef14;
+    }
+
+  
+    .window {
+      position: absolute;
+      top: 50px;
+      left: 225px;
+      width: 50px;
+      height: 50px;
+      background: lightblue;
+      border: 2px solid white;
+      border-radius: 50%;
+    }
+
+ 
+    .wall {
+      position: absolute;
+      width: 370px;
+      height: 200px;
+     
+      background: rgb(181, 12, 153);
+      left: 65px;
+      top: 193px;
+    }
+
+
+    .door {
+      position: absolute;
+      width: 86px;
+      height: 117px;
+      background: burlywood;
+      left: 207px;
+      top: 279px;
+    }
+
+
+    .door-knob {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1px solid white;
+      border-radius: 50%;
+      background: dodgerblue;
+      left: 217px;
+      top: 328px;
+    }
+  </style>
+</head>
+<body>
+  <div class="house">
+    <div class="roof"></div>
+    <div class="window"></div>
+    <div class="wall"></div>
+    <div class="door"></div>
+    <div class="door-knob"></div>
+  </div>
+</body>
+</html>
